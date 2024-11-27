@@ -11,7 +11,7 @@ nltk.download("punkt")
 nltk.download("stopwords")
 nltk.download("wordnet")
 # Fix for punkt issue: Ensure correct installation and set path explicitly
-nltk.data.path.append("C:/nltk_data")  # Change this to your desired directory if needed
+nltk.data.path.append("data.py")  # Change this to your desired directory if needed
 
 
 # Initialize tools
