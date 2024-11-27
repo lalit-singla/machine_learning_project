@@ -7,11 +7,12 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
 
-nltk.download('punkt', download_dir='./data.py')
-nltk.download('stopwords', download_dir='./data.py')
-nltk.download('wordnet', download_dir='./data.py')
+nltk.download('punkt', download_dir='./nltk_data')
+nltk.download('stopwords', download_dir='./nltk_data')
+nltk.download('wordnet', download_dir='./nltk_data')
 # Fix for punkt issue: Ensure correct installation and set path explicitly
-nltk.data.path.append("data.py")  # Change this to your desired directory if needed
+nltk.data.path.append('./nltk_data')
+  # Change this to your desired directory if needed
 
 
 # Initialize tools
