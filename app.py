@@ -6,14 +6,19 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 import nltk
+import os
 
-nltk.download('punkt', download_dir='./nltk_data')
-nltk.download('stopwords', download_dir='./nltk_data')
-nltk.download('wordnet', download_dir='./nltk_data')
-# Fix for punkt issue: Ensure correct installation and set path explicitly
-nltk.data.path.append('./nltk_data')
-  # Change this to your desired directory if needed
+# Download required NLTK resources if not already present
+nltk_data_path = os.path.join(os.getcwd(), 'nltk_data')
+nltk.data.path.append(nltk_data_path)
 
+if not os.path.exists(nltk_data_path):
+    os.makedirs(nltk_data_path)
+
+# Download resources (only if needed)
+nltk.download('punkt', download_dir=nltk_data_path)
+nltk.download('stopwords', download_dir=nltk_data_path)
+nltk.download('wordnet', download_dir=nltk_data_path)
 
 # Initialize tools
 lemmatizer = WordNetLemmatizer()
